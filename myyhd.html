@@ -15,9 +15,14 @@
                 background: #fafafa;
             }
 
-            header > span {
+            .location > span {
                 margin-left: 10px;
             }
+
+            .location {
+                display: inline;
+            }
+
             nav {
                 background: #fff;
                 width: 92px;
@@ -53,7 +58,9 @@
             <nav>
                 <span>Hi, 请 <a href="#">登录</a> / <a href="#">注册</a></span>
             </nav>
-            <span>送货至</span>
+            <div class="location">
+                <span>送货至</span>
+            </div>
         </header>
         <script type="text/javascript">
            var log = function() {
