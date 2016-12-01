@@ -21,6 +21,27 @@
                 margin-left: 100px;
                 line-height: 35px;
             }
+
+            .my-vip {
+                position: absolute;
+                border-radius: 20px;
+                border-width: 1px;
+                background-color: white;
+                border-color: red;
+                padding: 5px 7px 5px 7px;
+                color: red;
+                margin-left: 10px;
+            }
+
+            .my-info {
+                text-decoration: none;
+                color: black;
+                margin-left: 20px;
+            }
+
+            .my-credits {
+                padding: 10px 38px 10px 38px;
+            }
         </style>
     </head>
     <body>
@@ -63,8 +84,12 @@
        </script>
        <div id="id-div-container">
            <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
-           <button type="button" name="button">会员专享价，V3 免费购</button>
-           <a href="#">欢迎进入我的 1 号店</a>
+           <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
+           <a class="my-info" href="#">欢迎进入我的 1 号店</a>
+           <div class="credits-container">
+               <button class="my-credits" type="button" name="button">积分</button>
+               <button class="my-credits" type="button" name="button">勋章</button>
+           </div>
        </div>
     </body>
 </html>
