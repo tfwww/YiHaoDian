@@ -91,8 +91,8 @@
                navPart.addEventListener('mouseover', function(event) {
                    log('on mouse over', event.target)
                    var t = templateOnNav()
-                   // 这个方法用来添加元素更加方便, 不需要 createElement
-                   navPart.insertAdjacentHTML('beforeend', t);
+                   var header = document.querySelector('header')
+                   header.insertAdjacentHTML('afterEnd', t);
                })
            }
 
@@ -101,8 +101,8 @@
                navPart.addEventListener('mouseout', function(event) {
                    log('on mouse out', event.target)
                    var t = templateOnNav()
-                   // 这个方法用来添加元素更加方便, 不需要 createElement
-                   navPart.remove('id-div-container');
+                   var div = document.querySelector('#id-div-container')
+                   div.remove();
                })
            }
 
