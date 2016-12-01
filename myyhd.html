@@ -86,41 +86,48 @@
                console.log.apply(console, arguments);
            }
 
-           var navPart = document.querySelector('nav')
-           navPart.addEventListener('mouseover', function(event) {
-               log('on mouse over', event.target)
-               var t = templateOnNav()
-               // 这个方法用来添加元素更加方便, 不需要 createElement
-               navPart.insertAdjacentHTML('beforeend', t);
-           })
+           var bindEventMouseOver = function() {
+               var navPart = document.querySelector('nav')
+               navPart.addEventListener('mouseover', function(event) {
+                   log('on mouse over', event.target)
+                   var t = templateOnNav()
+                   // 这个方法用来添加元素更加方便, 不需要 createElement
+                   navPart.insertAdjacentHTML('beforeend', t);
+               })
+           }
 
-           navPart.addEventListener('mouseout', function(event) {
-               log('on mouse out', event.target)
-               var t = templateOnNav()
-               // 这个方法用来添加元素更加方便, 不需要 createElement
-               navPart.remove('todo-cell');
-           })
+           var bindEventMouserOut = function() {
+               var navPart = document.querySelector('nav')
+               navPart.addEventListener('mouseout', function(event) {
+                   log('on mouse out', event.target)
+                   var t = templateOnNav()
+                   // 这个方法用来添加元素更加方便, 不需要 createElement
+                   navPart.remove('id-div-container');
+               })
+           }
 
            var templateOnNav = function() {
                var t = `
-                   <div class='todo-cell'>
-                       <button class='todo-done'>完成</button>
-                       <button class='todo-delete'>删除</button>
-                   </div>
+                       <div id="id-div-container">
+                           <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
+                           <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
+                           <a class="my-info" href="#">欢迎进入我的 1 号店</a>
+                           <div class="credits-container">
+                               <button class="my-credits" type="button" name="button">积分</button>
+                               <button class="my-credits credits" type="button" name="button">勋章</button>
+                           </div>
+                       </div>
                `
                return t
            }
 
+           var __main = function() {
+               bindEventMouseOver()
+               bindEventMouserOut()
+           }
 
+           __main()
        </script>
-       <div id="id-div-container">
-           <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
-           <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
-           <a class="my-info" href="#">欢迎进入我的 1 号店</a>
-           <div class="credits-container">
-               <button class="my-credits" type="button" name="button">积分</button>
-               <button class="my-credits credits" type="button" name="button">勋章</button>
-           </div>
-       </div>
+
     </body>
 </html>
