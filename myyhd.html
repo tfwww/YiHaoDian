@@ -47,68 +47,68 @@
             }
 
             nav button {
-                padding: 0px 0px 0px 0px;
+                /*padding: 0px 0px 0px 0px;
                 position: absolute;
                 top: 21px;
-                left: 150px;
+                left: 150px;*/
             }
 
             .down_arrow {
-                position: absolute;
+                /*position: absolute;
                 top: 17px;
-                left: 150px;
+                left: 150px;*/
             }
             .my-vip {
-                position: absolute;
-                border-radius: 20px;
+                /*position: absolute;*/
+                /*border-radius: 20px;
                 border-width: 1px;
                 background-color: white;
                 border-color: red;
                 padding: 5px 7px 5px 7px;
                 color: red;
-                margin-left: 10px;
+                margin-left: 10px;*/
             }
 
             .my-info {
-                text-decoration: none;
+                /*text-decoration: none;
                 color: black;
-                margin-left: 20px;
+                margin-left: 20px;*/
             }
 
             .my-credits {
-                padding: 10px 60px 10px 60px;
+                /*padding: 10px 60px 10px 60px;
                 background-color: rgb(255,242,235);
                 border-width: 1px;
                 border-style: solid;
-                border-bottom: none;
+                border-bottom: none;*/
             }
 
             .credits-container {
-                margin-top: 6px;
+                /*margin-top: 10px;*/
             }
 
             .avatar {
-                margin-left: 10px;
+                /*margin-left: 10px;*/
             }
 
             .points {
-                border-left: none;
+                /*border-left: none;*/
             }
 
             .credits {
-                margin-left: -4px;
+                /*margin-left: -4px;
                 padding-right: 42px;
-                border-right: none;
+                border-right: none;*/
             }
 
             #id-div-container {
-                margin-left: 100px;
-                padding-top: 10px;
+                /*margin-left: 100px;
+                padding-top: 15px;
                 border-style: solid;
                 border-color: #bfbfbf;
                 border-width: 1px;
                 display: inline-block;
-                border-top: none;
+                border-top: none;*/
             }
 
         </style>
@@ -117,7 +117,16 @@
         <header>
             <nav>
                 <span>Hi, 请 <a href="#">登录</a> / <a href="#">注册</a></span>
-                <a class="down_arrow" href="#"><img src="image/downArrow.png" alt="" /></a>
+                <div class="id-div-container">
+                    <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
+                    <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
+                    <a class="my-info" href="#">欢迎进入我的 1 号店 ></a>
+                    <div class="credits-container">
+                        <button class="my-credits points" type="button" name="button">积分</button>
+                        <button class="my-credits credits" type="button" name="button">勋章</button>
+                    </div>
+                    <a class="down_arrow" href="#"><img src="image/downArrow.png" alt="" /></a>
+                </div>
             </nav>
             <div class="location">
                 <span>送货至</span>
@@ -132,20 +141,20 @@
            var bindEventMouseOver = function() {
                var navPart = document.querySelector('nav')
                navPart.addEventListener('mouseover', function(event) {
-                   log('on mouse over', event.target)
+                //    log('on mouse over', event.target)
                    var t = templateOnNav()
                    var header = document.querySelector('header')
-                   header.insertAdjacentHTML('afterEnd', t);
+                   header.insertAdjacentHTML('afterEnd', t)
                })
            }
 
            var bindEventMouserOut = function() {
                var navPart = document.querySelector('nav')
                navPart.addEventListener('mouseout', function(event) {
-                   log('on mouse out', event.target)
+                //    log('on mouse out', event.target)
                    var t = templateOnNav()
                    var div = document.querySelector('#id-div-container')
-                   div.remove();
+                   div.remove()
                })
            }
 
@@ -165,12 +174,11 @@
            }
 
            var __main = function() {
-               bindEventMouseOver()
-               bindEventMouserOut()
+            //    bindEventMouseOver()
+            //    bindEventMouserOut()
            }
 
            __main()
        </script>
-
     </body>
 </html>
