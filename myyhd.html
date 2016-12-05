@@ -77,10 +77,6 @@
                 border-bottom: none;
             }
 
-            .credits-container {
-                /*margin-top: 10px;*/
-            }
-
             .avatar {
                 margin-left: 10px;
             }
@@ -109,6 +105,23 @@
                 display: none;
             }
 
+            #id-hot-province {
+                text-align: center;
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 250px;
+                border-bottom-style: solid;
+                border-bottom-color: black;
+                border-bottom-width: 1px;
+            }
+
+            .provinces {
+                text-align: center;
+                position: absolute;
+                margin-top: 30px;
+                margin-left: 250px;
+            }
+
         </style>
     </head>
     <body>
@@ -116,7 +129,7 @@
             <nav>
                 <span class="login">Hi, 请 <a href="#">登录</a> / <a href="#">注册</a></span>
                 <a class="down-arrow" href="#"><img src="image/downArrow.png" alt="" /></a>
-                <div class="info-container">
+                <div class="info-container display-info">
                     <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
                     <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
                     <a class="my-info" href="#">欢迎进入我的 1 号店 ></a>
@@ -128,7 +141,64 @@
             </nav>
             <div class="location">
                 <span>送货至</span>
-                <button type="button" name="button">广东</button>
+                <button type="button" name="button">广东 <img src="image/down.png" alt=""></button>
+                <table id="id-hot-province">
+                    <tr>
+                        <th>热门省市</th>
+                        <td>上海</td>
+                        <td>北京</td>
+                        <td>广东</td>
+                        <td>湖北</td>
+                        <td>四川</td>
+                    </tr>
+                </table>
+                <table class="provinces">
+                    <tr>
+                        <td>华北：</td>
+                        <td><button type="button" name="button">北京</button></td>
+                        <td>天津</td>
+                        <td>河北</td>
+                        <td>山西</td>
+                        <td>内蒙古</td>
+                    </tr>
+                    <tr>
+                        <td>华东：</td>
+                        <td>上海</td>
+                        <td>江苏</td>
+                        <td>浙江</td>
+                        <td>安徽</td>
+                        <td>福建</td>
+                        <td>山东</td>
+                    </tr>
+                    <tr>
+                        <td>华南：</td>
+                        <td>广东</td>
+                        <td>广西</td>
+                        <td>海南</td>
+                    </tr>
+                    <tr>
+                        <td>西南：</td>
+                        <td>重庆</td>
+                        <td>四川</td>
+                        <td>贵州</td>
+                        <td>云南</td>
+                        <td>西藏</td>
+                    </tr>
+                    <tr>
+                        <td>西北：</td>
+                        <td>陕西</td>
+                        <td>甘肃</td>
+                        <td>青海</td>
+                        <td>宁夏</td>
+                        <td>新疆</td>
+                    </tr>
+                    <tr>
+                        <td>东北：</td>
+                        <td>辽宁</td>
+                        <td>吉林</td>
+                        <td>黑龙江</td>
+                    </tr>
+                </table>
             </div>
         </header>
         <script type="text/javascript">
@@ -155,6 +225,28 @@
                })
            }
 
+           var bindProvincesOn = function() {
+               var locationPart = document.querySelector('.location')
+               locationPart.addEventListener('mouseover', function(event) {
+                //    log('on mouse over', event.target)
+                   var tables = document.querySelectorAll('table')
+                   for (var i = 0; i < tables.length; i++) {
+                       tables[i].classList.remove('display-info')
+                    }
+                })
+           }
+
+           var bindProvincesOff = function() {
+               var locationPart = document.querySelector('.location')
+               locationPart.addEventListener('mouseout', function(event) {
+                //    log('on mouse out', event.target)
+                    var tables = document.querySelectorAll('table')
+                    for (var i = 0; i < tables.length; i++) {
+                        tables[i].classList.add('display-info')
+                    }
+               })
+           }
+
            var templateOnNav = function() {
                var t = `
                        <div id="id-div-container">
@@ -173,6 +265,8 @@
            var __main = function() {
                bindEventMouseOver()
                bindEventMouseOut()
+               bindProvincesOn()
+               bindProvincesOff()
            }
 
            __main()
