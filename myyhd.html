@@ -46,41 +46,36 @@
                 text-decoration: none;
             }
 
-            nav button {
-                /*padding: 0px 0px 0px 0px;
+            .down-arrow {
                 position: absolute;
-                top: 21px;
-                left: 150px;*/
+                top: 17px;
+                left: 150px;
             }
 
-            .down_arrow {
-                /*position: absolute;
-                top: 17px;
-                left: 150px;*/
-            }
             .my-vip {
-                /*position: absolute;*/
-                /*border-radius: 20px;
+                position: absolute;*/
+                border-radius: 20px;
                 border-width: 1px;
                 background-color: white;
                 border-color: red;
                 padding: 5px 7px 5px 7px;
                 color: red;
-                margin-left: 10px;*/
+                margin-left: 10px;
             }
 
             .my-info {
-                /*text-decoration: none;
+                text-decoration: none;
                 color: black;
-                margin-left: 20px;*/
+                margin-left: 20px;
             }
 
             .my-credits {
-                /*padding: 10px 60px 10px 60px;
+                padding: 10px 60px 10px 60px;
                 background-color: rgb(255,242,235);
                 border-width: 1px;
                 border-style: solid;
-                border-bottom: none;*/
+                border-bottom: none;
+                border-left: none;
             }
 
             .credits-container {
@@ -88,7 +83,7 @@
             }
 
             .avatar {
-                /*margin-left: 10px;*/
+                margin-left: 10px;
             }
 
             .points {
@@ -96,19 +91,22 @@
             }
 
             .credits {
-                /*margin-left: -4px;
+                margin-left: -4px;
                 padding-right: 42px;
-                border-right: none;*/
+                border-right: none;
             }
 
-            #id-div-container {
-                /*margin-left: 100px;
+            .info-container {
+                position: absolute;
+                left: 100px;
                 padding-top: 15px;
+                border-color: #dcdcdc;
                 border-style: solid;
-                border-color: #bfbfbf;
                 border-width: 1px;
-                display: inline-block;
-                border-top: none;*/
+            }
+
+            .display-info {
+                display: none;
             }
 
         </style>
@@ -116,8 +114,9 @@
     <body>
         <header>
             <nav>
-                <span>Hi, 请 <a href="#">登录</a> / <a href="#">注册</a></span>
-                <div class="id-div-container">
+                <span class="login">Hi, 请 <a href="#">登录</a> / <a href="#">注册</a></span>
+                <a class="down-arrow" href="#"><img src="image/downArrow.png" alt="" /></a>
+                <div class="info-container">
                     <a class="avatar" href="#"><img src="image/avatar.png" alt="" /></a>
                     <button class="my-vip" type="button" name="button">会员专享价，V3 免费购</button>
                     <a class="my-info" href="#">欢迎进入我的 1 号店 ></a>
@@ -125,7 +124,6 @@
                         <button class="my-credits points" type="button" name="button">积分</button>
                         <button class="my-credits credits" type="button" name="button">勋章</button>
                     </div>
-                    <a class="down_arrow" href="#"><img src="image/downArrow.png" alt="" /></a>
                 </div>
             </nav>
             <div class="location">
@@ -142,19 +140,18 @@
                var navPart = document.querySelector('nav')
                navPart.addEventListener('mouseover', function(event) {
                 //    log('on mouse over', event.target)
-                   var t = templateOnNav()
-                   var header = document.querySelector('header')
-                   header.insertAdjacentHTML('afterEnd', t)
-               })
+                //    var t = templateOnNav()
+                   var info = document.querySelector('.info-container')
+                   info.classList.remove('display-info')
+                })
            }
 
-           var bindEventMouserOut = function() {
+           var bindEventMouseOut = function() {
                var navPart = document.querySelector('nav')
                navPart.addEventListener('mouseout', function(event) {
                 //    log('on mouse out', event.target)
-                   var t = templateOnNav()
-                   var div = document.querySelector('#id-div-container')
-                   div.remove()
+                    var info = document.querySelector('.info-container')
+                    info.classList.add('display-info')
                })
            }
 
@@ -174,8 +171,8 @@
            }
 
            var __main = function() {
-            //    bindEventMouseOver()
-            //    bindEventMouserOut()
+               bindEventMouseOver()
+               bindEventMouseOut()
            }
 
            __main()
