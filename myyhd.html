@@ -172,11 +172,15 @@
                 margin-left: 700px;
             }
 
+            .menu-container div {
+                display: inline;
+            }
+
             .my-yhd {
                 display: inline;
             }
 
-            .my-yhd dl {
+            .menu-container dl {
                 position: absolute;
                 margin: 0px;
                 padding-top: 15px;
@@ -184,6 +188,10 @@
 
             .my-collector {
                 position: absolute;
+            }
+
+            .mobile-yhd {
+                margin-left: 40px;
             }
 
         </style>
@@ -434,17 +442,25 @@
                         <dt>会员专享</dt>
                     </dl>
                 </div>
-                <span>收藏夹</span>
                 <div class="my-collector dropdown">
-                    <dl class="">
+                    <span>收藏夹</span>
+                    <dl class="dropdown-content">
                         <dt>商品收藏</dt>
                         <dt>店铺收藏</dt>
                     </dl>
                 </div>
-                <span>掌上 1 号店</span>
-                <span>客户服务</span>
-                <span>网站导航</span>
-                <span>关注我们：</span>
+                <div class="mobile-yhd">
+                    <span>掌上 1 号店</span>
+                </div>
+                <div class="">
+                    <span>客户服务</span>
+                </div>
+                <div class="">
+                    <span>网站导航</span>
+                </div>
+                <div class="">
+                    <span>关注我们：</span>
+                </div>
             </div>
         </header>
 
