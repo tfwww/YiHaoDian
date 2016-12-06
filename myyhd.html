@@ -168,8 +168,24 @@
             }
 
             .menu-container {
+                display: inline-block;
+                margin-left: 700px;
+            }
+
+            .my-yhd {
                 display: inline;
             }
+
+            .my-yhd dl {
+                position: absolute;
+                margin: 0px;
+                padding-top: 15px;
+            }
+
+            .my-collector {
+                position: absolute;
+            }
+
         </style>
     </head>
     <body>
@@ -407,8 +423,24 @@
                 </div>
             </div>
             <div class="menu-container">
-                <span>我的 1 号店</span>
+                <div class="my-yhd dropdown">
+                    <span>我的 1 号店</span>
+                    <dl class="dropdown-content">
+                        <dt>我的订单</dt>
+                        <dt>我的积分</dt>
+                        <dt>我的红包</dt>
+                        <dt>我的抵用券</dt>
+                        <dt>我的评论</dt>
+                        <dt>会员专享</dt>
+                    </dl>
+                </div>
                 <span>收藏夹</span>
+                <div class="my-collector dropdown">
+                    <dl class="">
+                        <dt>商品收藏</dt>
+                        <dt>店铺收藏</dt>
+                    </dl>
+                </div>
                 <span>掌上 1 号店</span>
                 <span>客户服务</span>
                 <span>网站导航</span>
