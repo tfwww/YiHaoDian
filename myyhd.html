@@ -232,7 +232,9 @@
                 border: none;
                 background: none;
                 position: relative;
-                right: -40px;
+                right: -45px;
+                border-right: solid 1px #dcdcdc;
+                height: 30px;
             }
 
             .search-field {
@@ -240,7 +242,7 @@
                 background: none;
                 width: 500px;
                 height: 30px;
-                padding-left: 35px;
+                padding-left: 45px;
             }
 
             .search-field:focus {
@@ -254,6 +256,16 @@
                 color: white;
                 height: 32px;
                 width: 90px;
+            }
+
+            section {
+                margin-top: 50px;
+                margin-left: 100px;
+            }
+
+            .search-container {
+                position: relative;
+                top: -25px;
             }
         </style>
     </head>
@@ -560,9 +572,11 @@
         </header>
         <section>
             <a href="#"><img src="image/logo.png" alt=""></a>
-            <button class="search-button" type="button" name="button">商品</button>
-            <input class="search-field" type="field" name="" value="">
-            <button class="search-submit" type="submit" name="button">搜索</button>
+            <span class="search-container">
+                <button class="search-button" type="button" name="button">商品</button>
+                <input class="search-field" type="field" name="" value="">
+                <button class="search-submit" type="submit" name="button">搜索</button>
+            </span>
         </section>
 
         <script type="text/javascript">
