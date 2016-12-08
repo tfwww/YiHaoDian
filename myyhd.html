@@ -227,6 +227,34 @@
             .my-yhd-container {
                 margin-left: 600px;
             }
+
+            .search-button {
+                border: none;
+                background: none;
+                position: relative;
+                right: -40px;
+            }
+
+            .search-field {
+                border: solid 2px red;
+                background: none;
+                width: 500px;
+                height: 30px;
+                padding-left: 35px;
+            }
+
+            .search-field:focus {
+                outline: none;
+            }
+
+            .search-submit {
+                margin-left: -95px;
+                border: none;
+                background: red;
+                color: white;
+                height: 32px;
+                width: 90px;
+            }
         </style>
     </head>
     <body>
@@ -531,7 +559,10 @@
             </div>
         </header>
         <section>
-            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="image/logo.png" alt=""></a>
+            <button class="search-button" type="button" name="button">商品</button>
+            <input class="search-field" type="field" name="" value="">
+            <button class="search-submit" type="submit" name="button">搜索</button>
         </section>
 
         <script type="text/javascript">
