@@ -308,6 +308,32 @@
                 padding: 60px 80px;
                 border: solid 1px #bbbaba;
             }
+
+            .slide-indicator-container {
+                float: left;
+            }
+
+            .slide-indicator-container li {
+                float:left;
+                list-style:none;
+                width: 15px;
+                height: 15px;
+                margin-left: 10px;
+                background-color: #ccc;
+            }
+
+            .slide-indicator-container li:hover {
+                background-color: red;
+                cursor: pointer;
+            }
+
+            .slide-image {
+                display: none;
+            }
+
+            .slide-image-active {
+                display: block;
+            }
         </style>
     </head>
     <body>
@@ -612,7 +638,7 @@
             </div>
         </header>
         <section>
-            <a href="#"><img src="image/logo.png" alt=""></a>
+            <a href="#"><img src="0image/logo.png" alt=""></a>
             <span class="search-container">
                 <button class="search-button" type="button" name="button">商品</button>
                 <input class="search-field" type="field" name="" value="">
@@ -623,23 +649,36 @@
                 <div class="empty-cart dropdown-content">
                     <img src="image/emptyCart.png" alt="" />
                     <p>
-                        您的购物车里还没有1号店的商品哦~~
+                        您的购物车里还没有 1 号店的商品哦~~
                     </p>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="slice-images">
-                <img src="image/slide0.jpg" alt="" />
-                <img src="image/slide1.jpg" alt="" />
-                <img src="image/slide2.jpg" alt="" />
-                <img src="image/slide3.jpg" alt="" />
-                <img src="image/slide4.jpg" alt="" />
-                <img src="image/slide5.jpg" alt="" />
-                <img src="image/slide6.jpg" alt="" />
-                <img src="image/slide7.jpg" alt="" />
-                <img src="image/slide8.jpg" alt="" />
+            <div class="slide-images-container">
+                <img class="slide-image slide-image-active" src="0image/slide0.jpg" alt="slide0" />
+                <img class="slide-image" src="0image/slide1.jpg" alt="slide1" />
+                <img class="slide-image" src="0image/slide2.jpg" alt="slide2" />
+                <img class="slide-image" src="0image/slide3.jpg" alt="slide3" />
+                <img class="slide-image" src="0image/slide4.jpg" alt="slide4" />
+                <img class="slide-image" src="0image/slide5.jpg" alt="slide5" />
+                <img class="slide-image" src="0image/slide6.jpg" alt="slide6" />
+                <img class="slide-image" src="0image/slide7.jpg" alt="slide7" />
+                <img class="slide-image" src="0image/slide8.jpg" alt="slide8" />
+            </div>
+            <div class="slide-indicator-container">
+                <ol>
+                    <li class="indicator" data-index="0"></li>
+                    <li class="indicator" data-index="1"></li>
+                    <li class="indicator" data-index="2"></li>
+                    <li class="indicator" data-index="3"></li>
+                    <li class="indicator" data-index="4"></li>
+                    <li class="indicator" data-index="5"></li>
+                    <li class="indicator" data-index="6"></li>
+                    <li class="indicator" data-index="7"></li>
+                    <li class="indicator" data-index="8"></li>
+                </ol>
             </div>
         </section>
 
@@ -667,37 +706,11 @@
                })
            }
 
-           var bindProvincesOn = function() {
-               var locationPart = document.querySelector('.location')
-               locationPart.addEventListener('mouseover', function(event) {
-                //    log('on mouse over', event.target)
-                //    var tables = document.querySelectorAll('table')
-                //    for (var i = 0; i < tables.length; i++) {
-                //        tables[i].classList.remove('display-info')
-                //     }
-                    var table = document.querySelector('.table-container')
-                    table.classList.remove('display-info')
-                })
-           }
-
-           var bindProvincesOff = function() {
-               var locationPart = document.querySelector('.location')
-               locationPart.addEventListener('mouseout', function(event) {
-                //    log('on mouse out', event.target)
-                    // var tables = document.querySelectorAll('table')
-                    // for (var i = 0; i < tables.length; i++) {
-                    //     tables[i].classList.add('display-info')
-                    // }
-                    var table = document.querySelector('.table-container')
-                    table.classList.add('display-info')
-               })
-           }
+           var bindEv
 
            var __main = function() {
                bindEventMouseOver()
                bindEventMouseOut()
-            //    bindProvincesOn()
-            //    bindProvincesOff()
            }
 
            __main()
