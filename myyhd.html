@@ -657,15 +657,15 @@
 
         <section>
             <div class="slide-images-container">
-                <img class="slide-image slide-image-active" src="0image/slide0.jpg" alt="slide0" />
-                <img class="slide-image" src="0image/slide1.jpg" alt="slide1" />
-                <img class="slide-image" src="0image/slide2.jpg" alt="slide2" />
-                <img class="slide-image" src="0image/slide3.jpg" alt="slide3" />
-                <img class="slide-image" src="0image/slide4.jpg" alt="slide4" />
-                <img class="slide-image" src="0image/slide5.jpg" alt="slide5" />
-                <img class="slide-image" src="0image/slide6.jpg" alt="slide6" />
-                <img class="slide-image" src="0image/slide7.jpg" alt="slide7" />
-                <img class="slide-image" src="0image/slide8.jpg" alt="slide8" />
+                <img class="slide-image slide-image-active" src="0image/slide0.jpg" alt="slide0" data-index="0"/>
+                <img class="slide-image" src="0image/slide1.jpg" alt="slide1" data-index="1"/>
+                <img class="slide-image" src="0image/slide2.jpg" alt="slide2" data-index="2"/>
+                <img class="slide-image" src="0image/slide3.jpg" alt="slide3" data-index="3"/>
+                <img class="slide-image" src="0image/slide4.jpg" alt="slide4" data-index="4"/>
+                <img class="slide-image" src="0image/slide5.jpg" alt="slide5" data-index="5"/>
+                <img class="slide-image" src="0image/slide6.jpg" alt="slide6" data-index="6"/>
+                <img class="slide-image" src="0image/slide7.jpg" alt="slide7" data-index="7"/>
+                <img class="slide-image" src="0image/slide8.jpg" alt="slide8" data-index="8"/>
             </div>
             <div class="slide-indicator-container">
                 <ol>
@@ -711,9 +711,10 @@
                var indicators = document.querySelectorAll('.indicator')
                for (var i = 0; i < indicators.length; i++) {
                    indicators[i].addEventListener('mouseover', function(event) {
-                       if (images[1].classList.contains('slide-image-active') === false) {
-                           images[1].classList.add('slide-image-active')
-                       }
+                       var index = event.target.dataset.index
+                       log('indicatorInx', index)
+                       images[index].classList.add('slide-image-active')
+
                    })
                }
            }
