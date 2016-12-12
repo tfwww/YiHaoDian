@@ -712,9 +712,13 @@
                for (var i = 0; i < indicators.length; i++) {
                    indicators[i].addEventListener('mouseover', function(event) {
                        var index = event.target.dataset.index
-                       log('indicatorInx', index)
+                       for (var i = 0; i < images.length; i++) {
+                           if (images[i].classList.contains('slide-image-active')) {
+                               images[i].classList.remove('slide-image-active')
+                           }
+                       }
+                    //    log('indicatorInx', index)
                        images[index].classList.add('slide-image-active')
-
                    })
                }
            }
